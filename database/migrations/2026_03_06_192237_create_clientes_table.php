@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('apellidos');
             $table->string('correo_electronico')->unique();
-            $table->string('estado');
+            $table->string('estado')->default('activo');
 
             $table->unsignedBigInteger('id_plan');
             $table->unsignedBigInteger('id_gimnasio');

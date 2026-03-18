@@ -24,7 +24,9 @@ class ClienteController extends Controller
 
     public function store(Request $request)
     {
-        Cliente::create($request->all());
+        $data = $request->all();
+        $data['estado'] = 'activo';
+        Cliente::create($data);
         return redirect()->route('clientes.index');
     }
 
