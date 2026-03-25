@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="d-flex justify-content-between mb-3">
-    <h2 class="fw-bold">Clientes SmartFit</h2>
+    <h2 class="fw-bold text-warning">Clientes SmartFit</h2>
     <a href="{{ route('clientes.create') }}" class="btn btn-primary">+ Nuevo</a>
 </div>
 

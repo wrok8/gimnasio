@@ -18,6 +18,11 @@
             border-bottom: 3px solid #FFD700;
         }
 
+        label {
+            color: #fff;
+            font-weight: 500;
+        }
+
         .navbar-brand {
             color: #FFD700 !important;
             font-weight: bold;
@@ -78,9 +83,31 @@
 </head>
 <body>
 
-<nav class="navbar">
+<nav class="navbar navbar-expand-lg">
     <div class="container">
         <span class="navbar-brand">💪 SmartFit</span>
+
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="{{ route('clientes.index') }}">Clientes</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="{{ route('planes.index') }}">Planes</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="{{ route('gimnasios.index') }}">Gimnasios</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-warning" href="{{ route('personal.index') }}">Personal</a>
+                </li>
+
+            </ul>
+        </div>
     </div>
 </nav>
 

@@ -3,8 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GimnasioController;
 use App\Http\Controllers\ClienteController;
-
-
+use App\Http\Controllers\PlanController;
+use App\Http\Controllers\PersonalController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,3 +17,6 @@ use App\Http\Controllers\ClienteController;
 */
 Route::resource('clientes', ClienteController::class);
 Route::get('/gimnasios', [GimnasioController::class, 'index']);
+Route::resource('planes', PlanController::class);
+Route::resource('gimnasios', GimnasioController::class);
+Route::resource('personal', PersonalController::class);
