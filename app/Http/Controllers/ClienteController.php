@@ -6,6 +6,7 @@ use App\Models\Cliente;
 use App\Models\Plan;
 use App\Models\Gimnasio;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class ClienteController extends Controller
 {
@@ -24,9 +25,11 @@ class ClienteController extends Controller
 
     public function store(Request $request)
     {
-        $data=$request->all();
-        $data['estado']='activo';
+        $data = $request->all();
+        $data['estado'] = 'activo';
+
         Cliente::create($data);
+
         return redirect()->route('clientes.index');
     }
 
@@ -47,5 +50,14 @@ class ClienteController extends Controller
     {
         $cliente->delete();
         return redirect()->route('clientes.index');
+    }
+
+    public function pdf()
+    {
+        $clientes = Cliente::with(['plan','gimnasio'])->get();
+
+        $pdf = Pdf::loadView('clientes.pdf', compact('clientes'));
+
+        return $pdf->download('clientes_smartfit.pdf');
     }
 }

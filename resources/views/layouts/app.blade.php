@@ -81,6 +81,7 @@
         }
     </style>
 </head>
+
 <body>
 
 <nav class="navbar navbar-expand-lg">
@@ -114,6 +115,54 @@
 <div class="container mt-4">
     @yield('content')
 </div>
+
+<script>
+    // Evento 1: LOAD
+    window.addEventListener('load', function(){
+        alert("Sistema SmartFit cargado correctamente");
+    });
+
+    document.addEventListener('DOMContentLoaded', function(){
+        // Evento 2: MOUSEOVER
+        document.querySelectorAll('.btn').forEach(function(btn){
+            btn.addEventListener('mouseover', function(){
+                btn.style.transform="scale(1.04)";
+                btn.style.transition=".25s ease";
+                btn.style.boxShadow="0px 0px 12px rgba(255, 215, 0, .45)";
+            });
+
+            btn.addEventListener('mouseout', function(){
+                btn.style.transform="scale(1)";
+                btn.style.boxShadow="none";
+            });
+        });
+
+        // Evento 3: FOCUS
+        document.querySelectorAll('input,select,textarea').forEach(function(campo){
+            campo.addEventListener('focus', function(){
+                campo.style.backgroundColor="#333";
+                campo.style.color="#fff";
+                campo.style.transform="scale(1.01)";
+                campo.style.transition=".25s ease";
+                campo.style.boxShadow="0px 0px 10px rgba(255, 215, 0, .35)";
+            });
+
+            campo.addEventListener('blur', function(){
+                campo.style.backgroundColor="#2a2a2a";
+                campo.style.color="#fff";
+                campo.style.transform="scale(1)";
+                campo.style.boxShadow="none";
+            });
+        });
+
+        // Evento 4: SUBMIT
+        document.querySelectorAll('form').forEach(function(formulario){
+            formulario.addEventListener('submit', function(){
+                alert("✅ Formulario enviado correctamente");
+            });
+        });
+    });
+</script>
 
 </body>
 </html>

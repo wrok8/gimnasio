@@ -20,3 +20,5 @@ Route::get('/gimnasios', [GimnasioController::class, 'index']);
 Route::resource('planes', PlanController::class);
 Route::resource('gimnasios', GimnasioController::class);
 Route::resource('personal', PersonalController::class);
+
+Route::get('/clientes-pdf', [ClienteController::class, 'pdf'])->name('clientes.pdf');
